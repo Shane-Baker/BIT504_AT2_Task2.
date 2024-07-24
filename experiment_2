@@ -31,28 +31,19 @@ public class Cell {
         clear();
     }
     
-    // Other methods will be implemented next based on their respective TODOs
+
 }
-/** Paint itself on the graphics canvas, given the Graphics context g */
-public void paint(Graphics g) {
-    Graphics2D g2d = (Graphics2D) g;
-    g2d.setStroke(new BasicStroke(GameMain.SYMBOL_STROKE_WIDTH, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-    
-    // Calculate the coordinates for drawing the symbol
-    int x1 = col * GameMain.CELL_SIZE + GameMain.CELL_PADDING;
-    int y1 = row * GameMain.CELL_SIZE + GameMain.CELL_PADDING;
-    
-    if (content == Player.Cross) {
-        g2d.setColor(Color.RED);
-        int x2 = (col + 1) * GameMain.CELL_SIZE - GameMain.CELL_PADDING;
-        int y2 = (row + 1) * GameMain.CELL_SIZE - GameMain.CELL_PADDING;
-        g2d.drawLine(x1, y1, x2, y2);
-        g2d.drawLine(x2, y1, x1, y2);
-    } else if (content == Player.Nought) {
-        g2d.setColor(Color.BLUE);
-        g2d.drawOval(x1, y1, GameMain.SYMBOL_SIZE, GameMain.SYMBOL_SIZE);
-    }
+/**From this 
+	/** Set this cell's content to EMPTY */
+	public void clear() {
+		
+		// TODO: Set the value of content to Empty (Remember this is an enum)
+
+		
+	}
+		
 }
+/** to this 
 /** Set this cell's content to EMPTY */
 public void clear() {
     content = Player.EMPTY;
