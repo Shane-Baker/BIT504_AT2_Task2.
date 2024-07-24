@@ -4,22 +4,21 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 public class Cell {
-    //content of this cell (empty, cross, nought)
-	Player content;
-	//row and column of this cell
-	int row, col;
+    // Content of this cell (empty, cross, nought)
+    Player content;
+    // Row and column of this cell
+    int row, col;
+    
+    /** Constructor to initialise this cell with the specified row and col */
+    public Cell(int row, int col) {
+        this.row = row;
+        this.col = col;
+        // Set the cell content to EMPTY initially
+        clear();
+    }
 	
-	/** Constructor to initialise this cell with the specified row and col */
-	public Cell(int row, int col) {
-		
-		// TODO: Initialise the variables row, col 
+}
 
-		
-		
-		//TODO: call the method that sets the cell content to EMPTY
-		 
-	}
-	
 
 	/** Paint itself on the graphics canvas, given the Graphics context g */ 
 	public void paint(Graphics g) {
@@ -41,13 +40,10 @@ public class Cell {
 			graphic2D.drawOval(x1, y1, GameMain.SYMBOL_SIZE, GameMain.SYMBOL_SIZE);
 		}
 	}
-	
-	/** Set this cell's content to EMPTY */
-	public void clear() {
-		
-		// TODO: Set the value of content to Empty (Remember this is an enum)
 
-		
-	}
+/** Set this cell's content to EMPTY */
+public void clear() {
+    content = Player.EMPTY;
+}
 		
 }
