@@ -1,0 +1,11 @@
+public boolean isDraw() {
+    // Check if there are any empty cells left
+    for (int row = 0; row < GameMain.ROWS; ++row) {
+        for (int col = 0; col < GameMain.COLS; ++col) {
+            if (cells[row][col].getContent() == Player.EMPTY) {
+                return false;  // Found an empty cell, game is not a draw
+            }
+        }
+    }
+    return true;  // All cells are filled, game is a draw
+}
