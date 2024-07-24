@@ -76,6 +76,7 @@ public boolean hasWon(Player thePlayer, int playerRow, int playerCol) {
         cells[2][0].getContent() == thePlayer) {
         return true;
     }
+
     
     return false;  // No winning condition found
 }
