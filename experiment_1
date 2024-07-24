@@ -9,3 +9,34 @@ public boolean isDraw() {
     }
     return true;  // All cells are filled, game is a draw
 }
+public boolean hasWon(Player thePlayer, int playerRow, int playerCol) {
+    // Check row
+    if (cells[playerRow][0].getContent() == thePlayer &&
+        cells[playerRow][1].getContent() == thePlayer &&
+        cells[playerRow][2].getContent() == thePlayer) {
+        return true;
+    }
+    
+    // Check column
+    if (cells[0][playerCol].getContent() == thePlayer &&
+        cells[1][playerCol].getContent() == thePlayer &&
+        cells[2][playerCol].getContent() == thePlayer) {
+        return true;
+    }
+    
+    // Check diagonal (top-left to bottom-right)
+    if (cells[0][0].getContent() == thePlayer &&
+        cells[1][1].getContent() == thePlayer &&
+        cells[2][2].getContent() == thePlayer) {
+        return true;
+    }
+    
+    // Check diagonal (top-right to bottom-left)
+    if (cells[0][2].getContent() == thePlayer &&
+        cells[1][1].getContent() == thePlayer &&
+        cells[2][0].getContent() == thePlayer) {
+        return true;
+    }
+    
+    return false;  // No winning condition found
+}
